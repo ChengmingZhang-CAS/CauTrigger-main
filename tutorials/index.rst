@@ -9,7 +9,7 @@ CauTrigger is a powerful framework designed to identify causal triggers and cont
 Overview
 --------
 
-.. image:: Fig1.tif
+.. image:: CauTrigger_overview.png
    :alt: CauTrigger Overview
    :align: center
 
