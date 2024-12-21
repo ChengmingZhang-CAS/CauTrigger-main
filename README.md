@@ -31,7 +31,7 @@ python setup.py install
 
 For detailed documentation and tutorials, please visit our official CauTrigger tutorial website:
 
-[CauTrigger Tutorials](https://caufinder-tutorials.readthedocs.io/en/latest/index.html)
+[CauTrigger Tutorials](https://cautrigger-tutorials.readthedocs.io/en/latest/)
 
 ## License
 
