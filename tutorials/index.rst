@@ -22,6 +22,7 @@ Contents
    :maxdepth: 2
    
    Installation
+   Tutorial
    BenchmarkSimulation
    BenchmarkHESC
    BenchmarkPCC
