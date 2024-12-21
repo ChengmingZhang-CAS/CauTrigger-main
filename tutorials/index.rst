@@ -32,12 +32,6 @@ Contents
    CaseTNBC
 
 
-Attention!
-----------
-
-This is a tutorial for using CauTrigger, not a complete reproduction of the results in the article.Please refer to the article for the official content.
-
-
 References
 ----------
 
