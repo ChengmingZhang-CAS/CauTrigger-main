@@ -28,6 +28,45 @@ python setup.py install
 
 
 ## Tutorials
+We provide two simulated toy AnnData objects in docs/toy_adata_(non)linear.h5ad, for simple tests of causal decomposition and trigger identification.
+```python
+import pandas as pd
+import scanpy as sc
+from CauTrigger.utils import set_seed
+from CauTrigger.model import CauTrigger
+set_seed(42)
+
+adata1 = sc.read_h5ad('toy_adata_linear.h5ad')
+model = CauTrigger(
+    adata1,
+    n_causal=2,  # causal latent dim
+    n_latent=10,  # overall latent dim
+    n_hidden=128,
+    n_layers_encoder=0,
+    n_layers_decoder=0,
+    n_layers_dpd=0,
+    dropout_rate_encoder=0.0,
+    dropout_rate_decoder=0.0,
+    dropout_rate_dpd=0.0,
+    use_batch_norm='none',
+    use_batch_norm_dpd=True,
+    decoder_linear=True,
+    dpd_linear=False,
+    init_weight=init_weight,
+    init_thresh=0.0,
+    update_down_weight=False,
+    attention=False,
+    att_mean=False,
+)
+model.train(max_epochs=300, stage_training=True)
+weight_df_weight = model.get_up_feature_weights(normalize=True, method="Model", sort_by_weight=False)
+weight_df = pd.DataFrame({'weight_value': weight_df_weight[0]['weight'],})
+
+# Compare the Causal information flow across different dimensions of the latent space
+info_flow, info_flow_cat = model.compute_information_flow()
+```
+
+The following code blocks provide a simple tutorial for applying causal decomposition and performing downstream tasks on real-world datasets.
 - Load package
 
   ```python
