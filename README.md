@@ -37,6 +37,13 @@ from CauTrigger.model import CauTrigger
 set_seed(42)
 
 adata1 = sc.read_h5ad('toy_adata_linear.h5ad')
+# adata1
+# AnnData object with n_obs × n_vars = 200 × 100
+#     obs: 'labels'
+#     var: 'feat_type', 'feat_label'
+#     obsm: 'X_down'
+
+
 model = CauTrigger(
     adata1,
     n_causal=2,  # causal latent dim
