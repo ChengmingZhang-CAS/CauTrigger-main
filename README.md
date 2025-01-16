@@ -28,7 +28,7 @@ python setup.py install
 
 
 ## Tutorials
-We provide two simulated toy AnnData objects in docs/toy_adata_(non)linear.h5ad, for simple tests of causal decomposition and trigger identification.
+### We provide two simulated toy AnnData objects in docs/toy_adata_(non)linear.h5ad, for simple tests of causal decomposition and trigger identification.
 ```python
 import pandas as pd
 import scanpy as sc
@@ -73,7 +73,7 @@ weight_df = pd.DataFrame({'weight_value': weight_df_weight[0]['weight'],})
 info_flow, info_flow_cat = model.compute_information_flow()
 ```
 
-The following code blocks provide a simple tutorial for applying causal decomposition and performing downstream tasks on real-world datasets.
+### The following code blocks provide a simple tutorial for applying causal decomposition and performing downstream tasks on real-world datasets.
 - Load package
 
   ```python
@@ -199,7 +199,7 @@ The following code blocks provide a simple tutorial for applying causal decompos
   ```
 
   
-For detailed documentation and tutorials, please visit our official CauTrigger tutorial website:
+### For detailed documentation and tutorials, please visit our official CauTrigger tutorial website:
 
 [CauTrigger Tutorials](https://cautrigger-tutorials.readthedocs.io/en/latest/)
 
