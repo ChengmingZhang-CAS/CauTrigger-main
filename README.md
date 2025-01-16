@@ -1,4 +1,4 @@
-# CauTrigger
+# CauTrigger (v0.0.1)
 
 <div align="center">
   <img src="docs/logo.png" alt="CauTrigger logo" width="300" />
