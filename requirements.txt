@@ -1,6 +1,11 @@
-scanpy  # 1.10.0
-shap  # 0.45.0
-velocyto  # 0.17.17
+# Core libraries
+scanpy==1.10.0
+shap==0.45.0
+velocyto==0.17.17
 
-#  We used the following Python software libraries for benchmarking and comparison.
-#  celloracle (v0.18.0), cefcon (v0.2.1), pyscenic (v0.12.1), cell-gears (v0.1.2), cpa-tools (v0.8.7)
+# Benchmarking and comparison libraries (optional, install manually if needed)
+# celloracle==0.18.0
+# cefcon==0.2.1
+# pyscenic==0.12.1
+# cell-gears==0.1.2
+# cpa-tools==0.8.7
