@@ -27,9 +27,7 @@ Contents
    BenchmarkHESC
    BenchmarkPCC
    BenchmarkGI
-   CaseF2IPSC
-   CaseSperm
-   CaseTNBC
+
 
 
 
