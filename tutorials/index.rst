@@ -23,10 +23,7 @@ Contents
    
    Installation
    Tutorial
-   BenchmarkSimulation
-   BenchmarkHESC
-   BenchmarkPCC
-   BenchmarkGI
+
 
 
 
