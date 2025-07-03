@@ -4,7 +4,7 @@
   <img src="docs/logo.png" alt="CauTrigger logo" width="300" />
 </div>
 
-Deciphering and manipulating cell state transitions remain fundamental challenges in biology, as transcription factors (TFs) orchestrate these processes by regulating downstream effectors through hierarchical interactions. CauTrigger, a deep learning framework that uses causal information flow to identify TFs driving state transitions from gene expression profiles spanning two states. By incorporating hierarchical regulatory relationships, CauTrigger disentangles causal drivers from spurious associations and offers mechanistic insights into regulatory cascades. 
+Biological systems exhibit complex hierarchical regulation, where system states are governed by multilayered regulatory interactions. Understanding the causal architecture underlying these state transitions remains a major challenge due to confounding factors and the limitations of correlation-based analyses. To address this, we present CauTrigger, a hierarchical deep latent variable model that integrates do-calculus to identify potential causal triggers and predict perturbation outcomes. By disentangling causal and spurious latent factors, CauTrigger reconstructs the underlying regulatory hierarchy and enables interpretable reasoning over observational data.
 
 ![CauTrigger Overview](docs/CauTrigger_overview.png)
 
