@@ -40,70 +40,70 @@ set_seed(42)
 adata = sc.read_h5ad('adata.h5ad')
 
 layer1_vars = adata.var_names[adata.var["layer"] == "layer1"]
-    adata_layer1 = AnnData(
-        X=adata.obsm["layer1"],
-        obs=adata.obs.copy(),
-        var=adata.var.loc[layer1_vars].copy()
-    )
+adata_layer1 = AnnData(
+    X=adata.obsm["layer1"],
+    obs=adata.obs.copy(),
+    var=adata.var.loc[layer1_vars].copy()
+)
 
-    model_1L = CauTrigger1L(
-        adata_layer1,
-        n_latent=10,
-        n_hidden=128,
-        n_layers_encoder=0,
-        n_layers_decoder=0,
-        n_layers_dpd=0,
-        dropout_rate_encoder=0.0,
-        dropout_rate_decoder=0.0,
-        dropout_rate_dpd=0.0,
-        use_batch_norm='none',
-        use_batch_norm_dpd=True,
-        decoder_linear=False,
-        dpd_linear=True,
-        init_weight=None,
-        init_thresh=0.4,
-        attention=False,
-        att_mean=False,
-    )
-    model_1L.train(max_epochs=200, stage_training=True, weight_scheme="sim")
-    df_layer1, _ = model_1L.get_up_feature_weights(method=mode, normalize=False, sort_by_weight=True)
-    print("df_layer1", df_layer1.head(20))
+model_1L = CauTrigger1L(
+    adata_layer1,
+    n_latent=10,
+    n_hidden=128,
+    n_layers_encoder=0,
+    n_layers_decoder=0,
+    n_layers_dpd=0,
+    dropout_rate_encoder=0.0,
+    dropout_rate_decoder=0.0,
+    dropout_rate_dpd=0.0,
+    use_batch_norm='none',
+    use_batch_norm_dpd=True,
+    decoder_linear=False,
+    dpd_linear=True,
+    init_weight=None,
+    init_thresh=0.4,
+    attention=False,
+    att_mean=False,
+)
+model_1L.train(max_epochs=200, stage_training=True, weight_scheme="sim")
+df_layer1, _ = model_1L.get_up_feature_weights(method=mode, normalize=False, sort_by_weight=True)
+print("df_layer1", df_layer1.head(20))
 
-    # === Step 2: layer2 → upstream, use layer1 top-k as X_down ===
-    layer2_vars = adata.var_names[adata.var["layer"] == "layer2"]
-    df_layer1 = df_layer1.loc[layer1_vars]  # ensure order matches obsm["layer1"]
-    topk_indices = df_layer1["weight"].values.argsort()[-topk:]
-    X_down = adata.obsm["layer1"] if full_input else adata.obsm["layer1"][:, topk_indices]
+# === Step 2: layer2 → upstream, use layer1 top-k as X_down ===
+layer2_vars = adata.var_names[adata.var["layer"] == "layer2"]
+df_layer1 = df_layer1.loc[layer1_vars]  # ensure order matches obsm["layer1"]
+topk_indices = df_layer1["weight"].values.argsort()[-topk:]
+X_down = adata.obsm["layer1"] if full_input else adata.obsm["layer1"][:, topk_indices]
 
-    adata_layer2 = AnnData(
-        X=adata.obsm["layer2"],
-        obs=adata.obs.copy(),
-        var=adata.var.loc[layer2_vars].copy(),
-        obsm={"X_down": X_down}
-    )
+adata_layer2 = AnnData(
+    X=adata.obsm["layer2"],
+    obs=adata.obs.copy(),
+    var=adata.var.loc[layer2_vars].copy(),
+    obsm={"X_down": X_down}
+)
 
-    model_2L = CauTrigger2L(
-        adata_layer2,
-        n_latent=10,
-        n_hidden=128,
-        n_layers_encoder=0,
-        n_layers_decoder=0,
-        n_layers_dpd=0,
-        dropout_rate_encoder=0.0,
-        dropout_rate_decoder=0.0,
-        dropout_rate_dpd=0.0,
-        use_batch_norm='none',
-        use_batch_norm_dpd=True,
-        decoder_linear=False,
-        dpd_linear=True,
-        init_weight=None,
-        init_thresh=0.4,
-        attention=False,
-        att_mean=False,
-    )
-    model_2L.train(max_epochs=200, stage_training=True, weight_scheme="sim")
-    df_layer2, _ = model_2L.get_up_feature_weights(method=mode, normalize=False, sort_by_weight=True)
-    print("df_layer2", df_layer2.head(10))
+model_2L = CauTrigger2L(
+    adata_layer2,
+    n_latent=10,
+    n_hidden=128,
+    n_layers_encoder=0,
+    n_layers_decoder=0,
+    n_layers_dpd=0,
+    dropout_rate_encoder=0.0,
+    dropout_rate_decoder=0.0,
+    dropout_rate_dpd=0.0,
+    use_batch_norm='none',
+    use_batch_norm_dpd=True,
+    decoder_linear=False,
+    dpd_linear=True,
+    init_weight=None,
+    init_thresh=0.4,
+    attention=False,
+    att_mean=False,
+)
+model_2L.train(max_epochs=200, stage_training=True, weight_scheme="sim")
+df_layer2, _ = model_2L.get_up_feature_weights(method=mode, normalize=False, sort_by_weight=True)
+print("df_layer2", df_layer2.head(10))
 ```
 
   
