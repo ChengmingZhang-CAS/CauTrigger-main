@@ -12,6 +12,7 @@ Causal decoupling model constructed on a dual-flow variational autoencoder (DFVA
 
 
 ## Installation
+The installation process takes more than 3 to 10 minutes and is greatly dependent on the network speed.
 
 ```bash
 git clone git@github.com:ChengmingZhang-CAS/CauTrigger-main.git
