@@ -24,7 +24,7 @@ Contents
    Installation.md
    Tutorial.md
    BenchmarkSimulation2L.ipynb
-   BenchmarkSimulation2L Hard.ipynb
+   BenchmarkSimulation2L_Hard.ipynb
    BenchmarkHESC.ipynb
    BenchmarkHESC2Fibroblast.ipynb
    BenchmarkPCC.ipynb
