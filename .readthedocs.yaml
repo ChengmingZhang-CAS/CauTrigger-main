@@ -7,11 +7,11 @@ version: 2
 # Set the OS, Python version and other tools you might need
 build:
   os: ubuntu-22.04
-  jobs:
-    pre_build:
-      - echo "nbsphinx_execute = 'never'" >> tutorials/conf.py
   tools:
     python: "3.10"
+  jobs:
+    post_install:
+      - python -m ipykernel install --user --name=python3
     # You can also specify other tool versions:
     # nodejs: "20"
     # rust: "1.70"
