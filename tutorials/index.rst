@@ -22,7 +22,6 @@ Contents
    :maxdepth: 1
    
    Installation.md
-   Tutorial.md
    BenchmarkSimulation2L.ipynb
    BenchmarkSimulation2L_Hard.ipynb
    BenchmarkHESC.ipynb
