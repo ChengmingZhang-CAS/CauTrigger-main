@@ -8,7 +8,7 @@ Biological systems exhibit complex hierarchical regulation, where system states 
 
 ![CauTrigger Overview](docs/CauTrigger_overview.png)
 
-Causal decoupling model constructed on a dual-flow variational autoencoder (DFVAE) framework to identify causal triggers influencing state transition. Triggers ($x^u$) are processed through a feature selection layer to separates causal triggers ($x^{u,c}$) and others ($x^{u,s}$), and then encoded them into latent space $z$ consists of causal ($z^c$) and spurious ($z^s$) components. This latent space is decoded to generate downstream conductors ($x^d$) and to predict the final cell state ($y$). The model strives to maximize the causal information flow, $I(z^c→y)$, from $z^c$ to $y$, thus delineating the causal path from $x^{u,c}$ to $y$ via $z^c$.
+Causal decoupling model constructed on a dual-flow variational autoencoder (DFVAE) framework to identify causal triggers influencing state transition. Triggers ($x^n$) are processed through a feature selection layer to separates causal triggers ($x^{c_n}$) and others ($\tilde{x}^{c_n}$ ), and then encoded them into latent space $z$ consists of causal ($z^{c_n}$) and spurious ($z^{s_n}$) components. This latent space is decoded to generate downstream conductors ($x^{c_{n-1}},...,x^{c_1}$) and to predict the final cell state ($y$). The model strives to maximize the causal information flow, $I(z^{c_n}→y)$, from $z^{c_n}$ to $y$, thus delineating the causal path from $x^{c_n}$ to $y$ via $z^{c_n}$.
 
 
 ## Installation
