@@ -19,19 +19,19 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
-   Installation
-   Tutorial
-   BenchmarkSimulation2L
-   BenchmarkSimulation2L Hard
-   BenchmarkHESC
-   BenchmarkHESC2Fibroblast
-   BenchmarkPCC
-   BenchemarkPBMC
-   HESC_analysis
-   Case_axis_asd
-   Case_t2d_grn
+   Installation.md
+   Tutorial.md
+   BenchmarkSimulation2L.ipynb
+   BenchmarkSimulation2L Hard.ipynb
+   BenchmarkHESC.ipynb
+   BenchmarkHESC2Fibroblast.ipynb
+   BenchmarkPCC.ipynb
+   BenchmarkPBMC.ipynb
+   HESC_analysis.ipynb
+   Case_axis_asd.ipynb
+   Case_t2d_grn.ipynb
 
 
 
