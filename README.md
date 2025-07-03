@@ -39,6 +39,7 @@ set_seed(42)
 
 adata = sc.read_h5ad('adata.h5ad')
 
+# === Step 1: layer1 → downstream (closer to Y) ===
 layer1_vars = adata.var_names[adata.var["layer"] == "layer1"]
 adata_layer1 = AnnData(
     X=adata.obsm["layer1"],
