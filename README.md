@@ -107,10 +107,7 @@ df_layer2, _ = model_2L.get_up_feature_weights(method=mode, normalize=False, sor
 print("df_layer2", df_layer2.head(10))
 ```
 
-  
-### For detailed documentation and tutorials, please visit our official CauTrigger tutorial website:
 
-[CauTrigger Tutorials](https://cautrigger-tutorials.readthedocs.io/en/latest/)
 
 ## License
 
